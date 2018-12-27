@@ -1,0 +1,131 @@
+var a ;
+undefined
+typeof(a);
+"undefined"
+ a= 100;
+100
+typeof(a);
+"number"
+a="Hello";
+"Hello"
+typeof(a);
+"string"
+a= true;
+true
+typeof(a);
+"boolean"
+var d = new String("Hello");
+undefined
+var e = "Hello";
+undefined
+typeof(d);
+"object"
+typeof(e);
+"string"
+var x = 1000;
+undefined
+var y = new Number(1000);
+undefined
+typeof(x);
+"number"
+typeof(y);
+"object"
+var w = 100;
+undefined
+var w1 = new Number(w);
+undefined
+++w;
+101
+w;
+101
+w1;
+Number {100}
+++w1;
+101
+typeof(w1);
+"number"
+var e = 1000;
+undefined
+var name = "AMIT";
+undefined
+typeof(name);
+"string"
+var obj = {};
+undefined
+typeof(obj);
+"object"
+obj instanceof Object;
+true
+typeof(Object);
+"function"
+var e = new String("Hello");
+undefined
+typeof(e);
+"object"
+e instanceof String;
+true
+typeof(String);
+"function"
+e instanceof Object;
+true
+var obj = {id:1001, name:'Amit',city:'Delhi'};
+undefined
+typeof(obj);
+"object"
+obj.id;
+1001
+obj["id"];
+1001
+var obj2 = {1:100,2:200};
+undefined
+obj2.1;
+VM4351:1 Uncaught SyntaxError: Unexpected number
+obj2[1];
+100
+var mobile = {id:1001, name:'Apple',price:20000, brand:'Apple',discount:10};
+undefined
+mobile.id;
+1001
+for(let key in mobile){
+console.log("Key "+key+" Value "+mobile[key]);
+}
+VM5238:2 Key id Value 1001
+VM5238:2 Key name Value Apple
+VM5238:2 Key price Value 20000
+VM5238:2 Key brand Value Apple
+VM5238:2 Key discount Value 10
+undefined
+mobile;
+{id: 1001, name: "Apple", price: 20000, brand: "Apple", discount: 10}
+mobile.instock="Yes";
+"Yes"
+mobile;
+{id: 1001, name: "Apple", price: 20000, brand: "Apple", discount: 10, …}brand: "Apple"discount: 10id: 1001instock: "Yes"name: "Apple"price: 20000__proto__: Object
+mobile.instock;
+"Yes"
+delete mobile.brand;
+true
+mobile;
+{id: 1001, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+var t = mobile;
+undefined
+t;
+{id: 1001, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+t.id++;
+1001
+t;
+{id: 1002, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+mobile;
+{id: 1002, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+mobile = null;
+null
+t;
+{id: 1002, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+mobile.id;
+VM5653:1 Uncaught TypeError: Cannot read property 'id' of null
+    at <anonymous>:1:8
+(anonymous) @ VM5653:1
+mobile = t;
+{id: 1002, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
+mobile;
+{id: 1002, name: "Apple", price: 20000, discount: 10, instock: "Yes"}
