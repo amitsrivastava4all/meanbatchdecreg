@@ -1,0 +1,213 @@
+function add(){
+console.log("This is Add ");
+}
+undefined
+add();
+VM24105:2 This is Add 
+undefined
+add(10,20);
+VM24105:2 This is Add 
+undefined
+add("Hello");
+VM24105:2 This is Add 
+undefined
+console.dir(add);
+VM24416:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: constructor: ƒ add()__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()[[FunctionLocation]]: VM24105:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("This is Add "+arguments.length);
+}
+undefined
+add();
+VM26386:2 This is Add 0
+undefined
+add(10,20);
+VM26386:2 This is Add 2
+undefined
+add(10,20,30,40,50);
+VM26386:2 This is Add 5
+undefined
+add("Hello",10,true);
+VM26386:2 This is Add 3
+undefined
+function add(){
+//console.log("This is Add "+arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(10);
+10
+add(10,20);
+30
+add(10,20,30,40,50);
+150
+add("10",20,30,40,50);
+"01020304050"
+add(10,20,30,40,"50");
+"10050"
+function add(){
+//console.log("This is Add "+arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add("10",20,30,40,50);
+150
+add(10,20,30,40,"50");
+150
+parseInt("Hello");
+NaN
+function add(){
+//console.log("This is Add "+arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add("ten",20,30,40,"50");
+140
+var m = [10,20,30,40,50];
+undefined
+typeof(m);
+"object"
+m instanceof Array;
+true
+m instanceof Object;
+true
+function add(){
+//console.log("This is Add "+arguments.length);
+var sum = 0;
+for(let i = 0 ; i<arguments.length; i++){
+if( arguments[i] instanceof Array){
+for(let j=0; j<arguments[i].length;j++){
+sum+=isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+}
+}
+else{
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+}
+return sum;
+}
+undefined
+add([10,20],10);
+40
+add([10,20],[20,30],10,"10");
+100
+add(["10","Hello"],[20,30],10,"10");
+80
+function jQuery(){
+console.log("This is JQuery ",arguments.length);
+}
+undefined
+jQuery("#id");
+VM31460:2 This is JQuery  1
+undefined
+jQuery({id:1001});
+VM31460:2 This is JQuery  1
+undefined
+var $ = jQuery;
+undefined
+$;
+ƒ jQuery(){
+console.log("This is JQuery ",arguments.length);
+}
+$("Hello");
+VM31460:2 This is JQuery  1
+undefined
+function add(...args){
+console.log("Args is ",args.length);
+}
+undefined
+add(10,20);
+VM32225:2 Args is  2
+undefined
+var m = [10,20,30];
+undefined
+var n = [1,2,3,4];
+undefined
+var f = [m,n];
+undefined
+var f1 = [...m,...n];
+undefined
+f1;
+(7) [10, 20, 30, 1, 2, 3, 4]
+var obj = {id:1001,name:'Ram',city:'Delhi'};
+undefined
+var obj2 = {name:'JavaScript', duration:2};
+undefined
+var obj3 = {...obj,...obj2};
+undefined
+obj3;
+{id: 1001, name: "JavaScript", city: "Delhi", duration: 2}
+var g = obj;
+undefined
+g;
+{id: 1001, name: "Ram", city: "Delhi"}
+obj;
+{id: 1001, name: "Ram", city: "Delhi"}
+g.id++;
+1001
+obj;
+{id: 1002, name: "Ram", city: "Delhi"}
+g;
+{id: 1002, name: "Ram", city: "Delhi"}
+var m2 = {...obj};
+undefined
+m2;
+{id: 1002, name: "Ram", city: "Delhi"}
+obj;
+{id: 1002, name: "Ram", city: "Delhi"}
+m2.id++;
+1002
+m2;
+{id: 1003, name: "Ram", city: "Delhi"}
+obj;
+{id: 1002, name: "Ram", city: "Delhi"}
+var b = [10,20,30];
+undefined
+var f = b[0];
+undefined
+f;
+10
+var f2 = b[2];
+undefined
+f2;
+30
+var [a,,e] = b; 
+undefined
+a;
+10
+e;
+30
+b;
+(3) [10, 20, 30]
+var [a,q,w] = b; 
+undefined
+var b1 = [10,20,30,40,50,60];
+undefined
+var [m,,,,n]=b1;
+undefined
+m;
+10
+n;
+50
+obj;
+{id: 1002, name: "Ram", city: "Delhi"}
+var {name,city} = obj;
+undefined
+name;
+"Ram"
+city;
+"Delhi"
