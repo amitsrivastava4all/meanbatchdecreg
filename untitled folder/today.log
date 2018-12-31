@@ -1,0 +1,243 @@
+var a = [10,20,30,40,50];
+undefined
+var e = a[0];
+undefined
+e;
+10
+e = a[3];
+40
+var [x,y,,,z] = e;
+VM261:1 Uncaught TypeError: e is not iterable
+    at <anonymous>:1:17
+(anonymous) @ VM261:1
+var [x,y,,,z] = a;
+undefined
+x;
+10
+y;
+20
+z;
+50
+var obj = {};
+undefined
+var obj = {id:1001,name:'Ram',salary:9999, hra:222};
+undefined
+var e = obj.id;
+undefined
+e;
+1001
+var {id, name} = obj;
+undefined
+id;
+1001
+name;
+"Ram"
+function printObject(obj2){
+console.log("Id "+obj2.id"+Name "+obj2.name);
+}
+printObject(obj);
+VM763:2 Uncaught SyntaxError: missing ) after argument list
+function printObject(obj2){
+console.log("Id "+obj2.id+"Name "+obj2.name);
+}
+printObject(obj);
+VM796:2 Id 1001Name Ram
+undefined
+function printObject2({id, name}){
+console.log(`Id is ${id} and Name is ${name}`);
+}
+undefined
+printObject2(obj);
+VM1208:2 Id is 1001 and Name is Ram
+undefined
+function print(...a){
+console.log("Rec ",a.length);
+}
+undefined
+print();
+VM1507:2 Rec  0
+undefined
+print(10,20);
+VM1507:2 Rec  2
+undefined
+print(1,2,43,4,5,6);
+VM1507:2 Rec  6
+undefined
+function show(){
+console.log("Arg ",arguments.length);
+}
+undefined
+show(10,20);
+VM1701:2 Arg  2
+undefined
+show(10,20,30);
+VM1701:2 Arg  3
+undefined
+var e = [10,20,30];
+undefined
+var b = [22,4,55];
+undefined
+var m = [...e,...b];
+undefined
+m;
+(6) [10, 20, 30, 22, 4, 55]
+function show(){
+console.log(" i am show ");
+}
+undefined
+var t = show;
+undefined
+typeof(t);
+"function"
+t;
+ƒ show(){
+console.log(" i am show ");
+}
+t();
+VM3043:2  i am show 
+undefined
+function print(){
+console.log("Inside Print ");
+function test(){
+console.log("Inside Test ");
+}
+return test;
+                }
+undefined
+var m = print();
+VM3680:2 Inside Print 
+undefined
+typeof(m);
+"function"
+m();
+VM3680:4 Inside Test 
+undefined
+print()();
+VM3680:2 Inside Print 
+VM3680:4 Inside Test 
+undefined
+function loop(fn){
+for(let i =1 ; i<=10; i++){
+console.log(fn(i));
+}
+}
+undefined
+function evenOdd(num){
+return num%2==0?"Even "+num:"Odd "+num;
+}
+undefined
+evenOdd(3);
+"Odd 3"
+evenOdd(2);
+"Even 2"
+loop(evenOdd);
+VM4451:3 Odd 1
+VM4451:3 Even 2
+VM4451:3 Odd 3
+VM4451:3 Even 4
+VM4451:3 Odd 5
+VM4451:3 Even 6
+VM4451:3 Odd 7
+VM4451:3 Even 8
+VM4451:3 Odd 9
+VM4451:3 Even 10
+undefined
+function cube(num){
+return num**3;
+}
+undefined
+loop(cube);
+VM4451:3 1
+VM4451:3 8
+VM4451:3 27
+VM4451:3 64
+VM4451:3 125
+VM4451:3 216
+VM4451:3 343
+VM4451:3 512
+VM4451:3 729
+VM4451:3 1000
+undefined
+var cube2=num=>num**3;
+undefined
+typeof (cube2);
+"function"
+cube2(10);
+1000
+cube2=100;
+100
+typeof (cube2);
+"number"
+const cube3=num=>num**3;
+undefined
+cube3=100;
+VM5472:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:6
+(anonymous) @ VM5472:1
+const add = (a,b)=>a+b;
+undefined
+add(100,200);
+300
+const add = (a,b)=>
+{
+return a+b;
+}
+VM5941:1 Uncaught SyntaxError: Identifier 'add' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM5941:1
+const add2 = (a,b)=>
+{
+return a+b;
+}
+undefined
+add2(100,200);
+300
+function test1(){
+var m2 = 1000;
+var m = function(){
+console.log("this is M ");
+}
+var m2 = function(){
+console.log("this is m2");
+}
+//var t = ()=>1000;
+return [m,m2];
+}
+undefined
+var t = test1();
+undefined
+t;
+(2) [ƒ, ƒ]
+t[0]();
+VM6479:4 this is M 
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ ()arguments: nullcaller: nulllength: 0name: "m"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM6479:3[[Scopes]]: Scopes[2]1: ƒ ()arguments: nullcaller: nulllength: 0name: "m2"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM6479:6[[Scopes]]: Scopes[2]length: 2__proto__: Array(0)
+function test1(){
+var m2 = 1000;
+var m = function abcd(){
+console.log("this is M ");
+}
+var m2 = function abcd(){
+console.log("this is m2");
+}
+//var t = ()=>1000;
+return [m,m2];
+}
+undefined
+function test1(){
+var m2 = 1000;
+var m = function abcd(){
+console.log("this is M ");
+}
+var m2 = function xyz(){
+console.log("this is m2");
+}
+//var t = ()=>1000;
+return [m,m2];
+}
+undefined
+var t2 = test1();
+undefined
+t2;
+(2) [ƒ, ƒ]0: ƒ abcd()1: ƒ xyz()length: 2__proto__: Array(0)
