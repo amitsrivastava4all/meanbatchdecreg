@@ -1,0 +1,154 @@
+function test(){
+}
+var a = function(){
+}
+var d = function e(){
+}
+var r = ()=>1000;
+undefined
+typeof(test);
+"function"
+typeof(a);
+"function"
+typeof(d);
+"function"
+typeof(r);
+"function"
+function cal(){
+var add = function(a=0,b=0){
+return a + b;
+}
+var sub = (a=0,b=0)=> a-b;
+return [add,sub];
+}
+undefined
+var e = cal();
+undefined
+typeof(e);
+
+"object"
+e instanceof Array;
+true
+e;
+(2) [ƒ, ƒ]0: ƒ (a=0,b=0)1: (a=0,b=0)=> a-blength: 2__proto__: Array(0)
+e[0](10,20);
+30
+e[1](1000,2000);
+-1000
+var obj = {};
+undefined
+typeof(obj);
+"object"
+obj instanceof Object;
+true
+class A{
+}
+undefined
+typeof(A);
+"function"
+typeof(Object);
+"function"
+var obj = {id:1001,name:};
+VM2795:1 Uncaught SyntaxError: Unexpected token }
+var obj = {id:1001,name:'Ram'};
+undefined
+var a = 100;
+undefined
+a;
+100
+obj.id;
+1001
+obj.name;
+"Ram"
+var validation = {
+isBlank(){
+},
+isDigit(){
+}
+}
+undefined
+validation;
+{isBlank: ƒ, isDigit: ƒ}
+var validation = {
+isBlank:function(){
+},
+isDigit(){
+}
+}
+undefined
+var validation = {
+isBlank(){
+},
+isDigit(){
+}
+}
+undefined
+validation =1000;
+1000
+validation;
+1000
+validation.isBlank();
+VM4075:1 Uncaught TypeError: validation.isBlank is not a function
+    at <anonymous>:1:12
+(anonymous) @ VM4075:1
+typeof(validation);
+"number"
+ validation = {
+a:100,b:200
+}
+{a: 100, b: 200}
+validation.isBlank();
+VM4210:1 Uncaught TypeError: validation.isBlank is not a function
+    at <anonymous>:1:12
+(anonymous) @ VM4210:1
+validation.a;
+100
+const validation1 = {
+isBlank(){
+},
+isDigit(){
+}
+}
+undefined
+validation1=100;
+VM4277:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:12
+(anonymous) @ VM4277:1
+validation1.x=1000;
+1000
+validation1;
+{isBlank: ƒ, isDigit: ƒ, x: 1000}
+validation.x++;
+NaN
+validation1.x++;
+1000
+validation1;
+{isBlank: ƒ, isDigit: ƒ, x: 1001}
+const w = 1000;
+undefined
+const calcObject = {
+firstNumber:0,
+secondNumber:0,
+// addition:function(){}
+addition(){
+console.log("Add "+(calcObject.firstNumber + calcObject.secondNumber));
+}
+}
+calcObject.firstNumber = 1000;
+calcObject.secondNumber = 2000;
+calcObject.addition();
+VM6285:6 Add 3000
+undefined
+const computeObject = {
+firstNumber:0,
+secondNumber:0,
+// addition:function(){}
+addition(){
+console.log("Add "+(this.firstNumber + this.secondNumber));
+}
+}
+computeObject.firstNumber = 1000;
+computeObject.secondNumber = 2000;
+computeObject.addition();
+VM6389:6 Add 3000
+undefined
