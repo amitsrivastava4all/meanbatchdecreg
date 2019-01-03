@@ -1,0 +1,217 @@
+var a;
+undefined
+typeof(a);
+"undefined"
+a=100;
+100
+typeof(a);
+"number"
+a=100.20;
+100.2
+typeof(a);
+"number"
+a=1;
+1
+typeof(a);
+"number"
+a=10000000;
+10000000
+typeof(a);
+"number"
+a="Amit";
+"Amit"
+typeof(a);
+"string"
+a='Amit';
+"Amit"
+typeof(a);
+"string"
+a='A';
+"A"
+typeof(a);
+"string"
+a="Hello How are You \n I am Fine";
+"Hello How are You 
+ I am Fine"
+a=`jhgdjkhgjkhdfkjghjkdfhgjkdfhjkghdfkjhgk
+gdf
+g
+df
+gdf
+gdf
+g
+df
+gfd
+gdf
+`;
+"jhgdjkhgjkhdfkjghjkdfhgjkdfhjkghdfkjhgk
+gdf
+g
+df
+gdf
+gdf
+g
+df
+gfd
+gdf
+"
+typeof(a);
+"string"
+a=100;
+100
+var b = "100";
+undefined
+typeof(a);
+"number"
+typeof(b);
+"string"
+a==b
+true
+a===b;
+false
+a=true;
+true
+typeof(a);
+"boolean"
+true + true;
+2
+a=100/0
+Infinity
+a;
+Infinity
+typeof(a);
+"number"
+a=100;
+100
+b="100";
+"100"
+var c = a + b;
+undefined
+c;
+"100100"
+var c = a + parseInt(b);
+undefined
+c;
+200
+b="100.20";
+"100.20"
+var c = a + parseFloat(b);
+undefined
+c;
+200.2
+b="Amit";
+"Amit"
+parseInt(b);
+NaN
+var d = parseInt("Amit");
+undefined
+d;
+NaN
+typeof(d);
+"number"
+var c = a + parseFloat(b);
+undefined
+c;
+NaN
+a;
+100
+b;
+"Amit"
+100 + NaN;
+NaN
+isNaN(c);
+true
+c;
+NaN
+c=100;
+100
+c;
+100
+isNaN(c);
+false
+c=NaN;
+NaN
+isNaN(c);
+true
+isNaN(c)?0:c;
+0
+c;
+NaN
+isNaN(c)?0:c;
+0
+c=1000;
+1000
+isNaN(c)?0:c;
+1000
+isFinite(c)?c:0;
+1000
+c;
+1000
+c=1000/0;
+Infinity
+isFinite(c)?c:0;
+0
+var e = [10,20,30,40,50,"Amit",true,[1000,2000]]
+undefined
+e;
+(8) [10, 20, 30, 40, 50, "Amit", true, Array(2)]
+var m = e;
+undefined
+m[0] = 1000;
+1000
+m;
+(8) [1000, 20, 30, 40, 50, "Amit", true, Array(2)]
+e;
+(8) [1000, 20, 30, 40, 50, "Amit", true, Array(2)]
+var r = [...e];
+undefined
+r;
+(8) [1000, 20, 30, 40, 50, "Amit", true, Array(2)]
+e;
+(8) [1000, 20, 30, 40, 50, "Amit", true, Array(2)]
+r[0] = 2000;
+2000
+e;
+(8) [1000, 20, 30, 40, 50, "Amit", true, Array(2)]
+r;
+(8) [2000, 20, 30, 40, 50, "Amit", true, Array(2)]
+typeof(r);
+"object"
+r instanceof Array;
+true
+typeof(Array);
+"function"
+var ram = {id:1001,name:'Ram',salary:9999};
+undefined
+ram.hra = 999;
+999
+ram;
+{id: 1001, name: "Ram", salary: 9999, hra: 999}
+delete ram.id;
+true
+ram;
+{name: "Ram", salary: 9999, hra: 999}
+typeof(ram);
+"object"
+ram instanceof Object;
+true
+function test(){
+console.log("I am Test");
+}
+undefined
+var m = test;
+undefined
+typeof(m);
+"function"
+m;
+ƒ test(){
+console.log("I am Test");
+}
+m();
+VM3800:2 I am Test
+undefined
+function call(fn){
+fn();
+console.log("Call Call ");
+}
+undefined

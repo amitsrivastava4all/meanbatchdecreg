@@ -1,0 +1,163 @@
+const obj = {
+add(){
+console.log("NewStyle ");
+},
+sub:function(){
+console.log("Old Style");
+}
+}
+undefined
+function w(){
+console.log("W ");
+}
+undefined
+w();
+VM5736:2 W 
+undefined
+obj.add();
+VM5669:3 NewStyle 
+undefined
+const obj2 = {
+x:10,
+y:20,
+add(z){
+console.log("NewStyle "+this.x+" "+this.y+" "+z);
+},
+sub:function(){
+console.log("Old Style");
+}
+}
+undefined
+obj2.add(1000);
+VM6671:5 NewStyle 10 20 1000
+undefined
+var mm = [10,20,30,40];
+undefined
+typeof(mm);
+"object"
+mm instanceof Array;
+true
+typeof(Array);
+"function"
+mm.push(9999);
+5
+m;
+VM7247:1 Uncaught ReferenceError: m is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM7247:1
+mm;
+(5) [10, 20, 30, 40, 9999]
+mm.pop();
+9999
+mm;
+(4) [10, 20, 30, 40]
+mm.splice(1);
+(3) [20, 30, 40]
+mm;
+[10]
+mm = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+mm.splice(1,1);
+[20]
+mm;
+(4) [10, 30, 40, 50]
+mm.splice(1,2);
+(2) [30, 40]
+mm;
+(2) [10, 50]
+mm.splice();
+[]
+mm = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+mm=[];
+[]
+mm = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+mm.length=0;
+0
+mm;
+[]
+mm = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+mm.length=2;
+2
+mm;
+(2) [10, 20]
+mm.indexOf(20);
+1
+mm.indexOf(50);
+-1
+mm;
+(2) [10, 20]
+mm = [10,20,30,40,50];
+(5) [10, 20, 30, 40, 50]
+mm = [10,20,30,40,50,50,50];
+(7) [10, 20, 30, 40, 50, 50, 50]
+mm.indexOf(50);
+4
+mm.lastIndexOf(50);
+6
+var appleIphone = {id:101,name:'Apple',price:30000};
+undefined
+var samsungIphone = {id:102,name:'Samsung',price:20000};
+undefined
+var mobiles = [appleIphone,samsungIphone];
+undefined
+function createMobile(id , name , price){
+var mobileObject = {};
+mobileObject.id = id;
+mobileObject.name = name;
+mobileObject.price = price;
+return mobileObject;
+}
+undefined
+var apple = createMobile(1001,"Apple",99999);
+undefined
+typeof(apple);
+"object"
+// function constructor
+function Mobile(id , name, price){
+// var this = {}; // Implicit Code
+this.id = id ;
+this.name =name;
+this.price = price;
+// return this; // Implicit Code
+}
+undefined
+var apple = new Mobile(1001, "Apple",99999);
+undefined
+typeof(apple)
+"object"
+apple instanceof Mobile;
+true
+class Employee{
+constructor(id , name, salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+}
+undefined
+var ram = new Employee(1001,"Ram",9999);
+undefined
+typeof(ram);
+"object"
+ram instanceof Employee;
+true
+typeof(Employee);
+"function"
+typeof(Mobile);
+"function"
+Mobile.prototype;
+{constructor: ƒ}constructor: ƒ Mobile(id , name, price)__proto__: Object
+Mobile;
+ƒ Mobile(id , name, price){
+// var this = {}; // Implicit Code
+this.id = id ;
+this.name =name;
+this.price = price;
+// return this; // Implicit Code
+}
+console.dir(Mobile);
+VM15423:1 ƒ Mobile(id , name, price)arguments: nullcaller: nulllength: 3name: "Mobile"prototype: constructor: ƒ Mobile(id , name, price)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM11450:2[[Scopes]]: Scopes[2]
+undefined
