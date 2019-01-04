@@ -1,0 +1,253 @@
+var z = [10,20,30,40,50];
+undefined
+z;
+(5) [10, 20, 30, 40, 50]
+z.splice(1,1);
+
+[20]
+z;
+(4) [10, 30, 40, 50]
+z = [];
+[]
+var z = [10,20,30,40,50];
+undefined
+z.length=0;
+0
+z;
+[]
+class Student{
+constructor(id , name, course){
+this.id = id;
+this.name = name;
+this.course = course;
+}
+}
+var ram = new Student(1001,"Ram","JavaScript");
+undefined
+ram;
+Student {id: 1001, name: "Ram", course: "JavaScript"}
+class Customer{
+constructor(id , name , balance, orderId){
+this.id = id:
+}
+}
+VM1278:3 Uncaught SyntaxError: Unexpected token :
+class Customer{
+constructor(id , name , balance, orderId){
+this.id = id;
+this.name = name;
+this.balance = balance;
+this.orderId = orderId;
+
+}
+}
+undefined
+var shyam = new Customer(1002,"Shyam",9000,10);
+undefined
+ram;
+Student {id: 1001, name: "Ram", course: "JavaScript"}
+shyam;
+Customer {id: 1002, name: "Shyam", balance: 9000, orderId: 10}
+function print(object){
+
+}
+undefined
+ram.name;
+"Ram"
+ram.course;
+"JavaScript"
+var key="name";
+undefined
+typeof(key);
+"string"
+ram[key];
+"Ram"
+key="course";
+"course"
+ram[key];
+"JavaScript"
+for(let key in ram){
+console.log("Key "+key);
+}
+VM2124:2 Key id
+VM2124:2 Key name
+VM2124:2 Key course
+undefined
+for(let key in ram){
+console.log("Key "+key+" Value "+ram[key]);
+}
+VM2184:2 Key id Value 1001
+VM2184:2 Key name Value Ram
+VM2184:2 Key course Value JavaScript
+undefined
+function print(object){
+for(let key in object){
+console.log("Key "+key+" Value "+Object[key]);
+}
+}
+undefined
+print(ram);
+VM2285:3 Key id Value undefined
+VM2285:3 Key name Value Object
+VM2285:3 Key course Value undefined
+undefined
+function print(object){
+for(let key in object){
+console.log("Key "+key+" Value "+object[key]);
+}
+}
+undefined
+print(ram);
+VM2346:3 Key id Value 1001
+VM2346:3 Key name Value Ram
+VM2346:3 Key course Value JavaScript
+undefined
+print(shyam);
+VM2346:3 Key id Value 1002
+VM2346:3 Key name Value Shyam
+VM2346:3 Key balance Value 9000
+VM2346:3 Key orderId Value 10
+undefined
+var obj = {1:100, 2:9999};
+undefined
+obj.1;
+VM2478:1 Uncaught SyntaxError: Unexpected number
+obj[1];
+100
+var w = [10,20,30,50,900];
+undefined
+for(let i of w){
+console.log(i);
+}
+VM2877:2 10
+VM2877:2 20
+VM2877:2 30
+VM2877:2 50
+VM2877:2 900
+undefined
+for(let j=0;j<w.length;j++){
+console.log(w[j]);
+}
+VM2969:2 10
+VM2969:2 20
+VM2969:2 30
+VM2969:2 50
+VM2969:2 900
+undefined
+var a = [10,20,30,40,50];
+undefined
+typeof(a);
+"object"
+a instanceof Array;
+true
+typeof(Array);
+"function"
+var e = {id:1001, name:'Ram'};
+undefined
+console.log("E is "+e);
+VM4301:1 E is [object Object]
+undefined
+console.log("E is ",e);
+VM4355:1 E is  {id: 1001, name: "Ram"}
+undefined
+shyam;
+Customer {id: 1002, name: "Shyam", balance: 9000, orderId: 10}
+console.log("E is ",e,"Customer is ",shyam);
+VM4546:1 E is  {id: 1001, name: "Ram"} Customer is  Customer {id: 1002, name: "Shyam", balance: 9000, orderId: 10}
+undefined
+function show(currentElement){
+console.log("CurrentElement is ",currentElement);
+}
+a.forEach(show);
+VM4792:2 CurrentElement is  10
+VM4792:2 CurrentElement is  20
+VM4792:2 CurrentElement is  30
+VM4792:2 CurrentElement is  40
+VM4792:2 CurrentElement is  50
+undefined
+
+a.forEach(currentElement=>console.log("CurrentElement is ",currentElement));
+VM5025:2 CurrentElement is  10
+VM5025:2 CurrentElement is  20
+VM5025:2 CurrentElement is  30
+VM5025:2 CurrentElement is  40
+VM5025:2 CurrentElement is  50
+undefined
+a;
+(5) [10, 20, 30, 40, 50]
+var a = [...a,20,50,40,50];
+undefined
+a;
+(9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+var e = a.filter(currentElement=>currentElement==50)
+undefined
+e;
+(3) [50, 50, 50]
+e.length;
+3
+ a.filter(currentElement=>currentElement==50).length;
+3
+var e = a.filter(c=>true);
+undefined
+e;
+(9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+
+a.forEach((currentElement,index)=>console.log("CurrentElement is ",currentElement, "Index ",index));
+VM5923:2 CurrentElement is  10 Index  0
+VM5923:2 CurrentElement is  20 Index  1
+VM5923:2 CurrentElement is  30 Index  2
+VM5923:2 CurrentElement is  40 Index  3
+VM5923:2 CurrentElement is  50 Index  4
+VM5923:2 CurrentElement is  20 Index  5
+VM5923:2 CurrentElement is  50 Index  6
+VM5923:2 CurrentElement is  40 Index  7
+VM5923:2 CurrentElement is  50 Index  8
+undefined
+
+a.forEach((currentElement,index,arr)=>console.log("CurrentElement is ",currentElement, "Index ",index," Arr ",arr));
+VM6028:2 CurrentElement is  10 Index  0  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  20 Index  1  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  30 Index  2  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  40 Index  3  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  50 Index  4  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  20 Index  5  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  50 Index  6  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  40 Index  7  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+VM6028:2 CurrentElement is  50 Index  8  Arr  (9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+undefined
+a;
+(9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+a.find(c=>c==50);
+50
+a.findIndex(c=>c==50);
+4
+a.find(c=>c==500);
+undefined
+a.findIndex(c=>c==500);
+-1
+var e = a.filter(c=>c==50 || c==40);
+undefined
+e;
+(5) [40, 50, 50, 40, 50]
+var e = a.filter(c=>c>20);
+undefined
+e;
+(6) [30, 40, 50, 50, 40, 50]
+e;
+(6) [30, 40, 50, 50, 40, 50]
+a;
+(9) [10, 20, 30, 40, 50, 20, 50, 40, 50]
+a.sort((first, second)=>first-second);
+(9) [10, 20, 20, 30, 40, 40, 50, 50, 50]
+"amit".localeCompare("ram");
+-1
+"ram".localeCompare("ram");
+0
+"ram".localeCompare("amit");
+1
+var names = ["amit","ram","anil","shyam","ajay"];
+undefined
+names.sort((first,second)=>first.localeCompare(second));
+(5) ["ajay", "amit", "anil", "ram", "shyam"]
+names.sort((first,second)=>second.localeCompare(first));
+(5) ["shyam", "ram", "anil", "amit", "ajay"]
