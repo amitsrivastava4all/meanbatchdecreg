@@ -1,0 +1,105 @@
+var arr = [10,20,30,40,50];
+undefined
+arr.forEach(currentElement=>console.log(currentElement));
+VM10394:1 10
+VM10394:1 20
+VM10394:1 30
+VM10394:1 40
+VM10394:1 50
+undefined
+arr.forEach((currentElement,index)=>console.log(index));
+VM10542:1 0
+VM10542:1 1
+VM10542:1 2
+VM10542:1 3
+VM10542:1 4
+undefined
+var names = ["ram","shyam","amit"];
+undefined
+"ram".localeCompare("amit");
+1
+"amit".localeCompare("anil");
+-1
+names.sort((first,second)=>first.localeCompare(b));
+VM10971:1 Uncaught ReferenceError: b is not defined
+    at names.sort (<anonymous>:1:48)
+    at Array.sort (<anonymous>)
+    at <anonymous>:1:7
+names.sort @ VM10971:1
+(anonymous) @ VM10971:1
+names.sort((first,second)=>first.localeCompare(second));
+(3) ["amit", "ram", "shyam"]
+class Product{
+constructor(id, name, price, brand){
+this.id = id;
+this.name = name;
+this.price =price;
+this.brand = brand;
+}
+}
+undefined
+var apple = new Product(1001,"IPhone",90000,"Apple");
+undefined
+var samsung = new Product(1002,"Galaxy",30000,"Samsung");
+undefined
+var mobiles = [apple,samsung];
+undefined
+mobiles.sort((firstObject, secondObject)=>firstObject.price-secondObject.price);
+(2) [Product, Product]0: Product {id: 1002, name: "Galaxy", price: 30000, brand: "Samsung"}1: Product {id: 1001, name: "IPhone", price: 90000, brand: "Apple"}length: 2__proto__: Array(0)
+var m = [1,2,3,4,5];
+undefined
+var g = m.map(y=>y**3);
+undefined
+g;
+(5) [1, 8, 27, 64, 125]
+m;
+(5) [1, 2, 3, 4, 5]
+m.map(y=>"Rs"+y);
+(5) ["Rs1", "Rs2", "Rs3", "Rs4", "Rs5"]
+m;
+(5) [1, 2, 3, 4, 5]
+m.reduce((acc,current)=>acc+=current);
+15
+m.reduce((acc,current)=>acc+=current,acc=0);
+15
+m.reduce((acc,current)=>{
+console.log("Acc ",acc ," Current ",current);
+return acc+=current
+});
+VM14427:2 Acc  1  Current  2
+VM14427:2 Acc  3  Current  3
+VM14427:2 Acc  6  Current  4
+VM14427:2 Acc  10  Current  5
+15
+m.reduce((acc,current)=>{
+console.log("Acc ",acc ," Current ",current);
+return acc+=current
+},acc=0);
+VM14518:2 Acc  0  Current  1
+VM14518:2 Acc  1  Current  2
+VM14518:2 Acc  3  Current  3
+VM14518:2 Acc  6  Current  4
+VM14518:2 Acc  10  Current  5
+15
+var  m = [10,20,30,10,20,50,10];
+undefined
+var subArray = m.filter(y=>y==10);
+undefined
+subArray.length;
+3
+m.reduce((acc,currentElement)=>{
+if(currentElement==10){
+acc.push(currentElement);
+}
+return  acc;
+},acc=[]);
+
+(3) [10, 10, 10]
+m.reduce((acc,currentElement)=>{
+if(currentElement==10){
+acc.push(currentElement);
+}
+return  acc;
+},acc=[]).length;
+
+3
