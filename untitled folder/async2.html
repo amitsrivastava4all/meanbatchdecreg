@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function callBack(e) {
+        //     document.querySelector("#result").innerText = e;
+        // }
+
+        function print() {
+            var promise = doCube();
+            console.log("Promise Status is ", promise);
+            for (let i = 1; i <= 10; i++) {
+                console.log("Time Pass ", i);
+            }
+            promise.then(data => {
+                console.log("result is ", data);
+                document.querySelector("#result").innerText = data;
+            }).catch(err => {
+                console.log("Failed...", err);
+            })
+            for (let i = 1; i <= 10; i++) {
+                console.log("Time Pass Again ", i);
+            }
+
+            //doCube(3, callBack);
+            //var result = doCube(3);
+            //document.querySelector("#result").innerText = result;
+        }
+
+        //function doCube(num, fn) {
+        function doCube(num) {
+            console.log("I am in Cube ", num);
+            var pr = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Awake Cube")
+                        //document.querySelector("#result").innerText = num ** 3;
+                    console.log("Cube Done");
+                    if (num) {
+                        resolve(num ** 3);
+                    } else {
+                        reject("No Value Found")
+                    }
+                    //fn(num ** 3);
+                    //return num ** 3;
+                }, 7000);
+            });
+
+
+            //return num ** 3;
+            console.log("Cube End ");
+            return pr;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    <button onclick="print()">Cube</button>
+</body>
+
+</html>

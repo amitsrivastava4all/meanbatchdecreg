@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynch Demo</title>
+    <script>
+        function print(val) {
+            console.log("Value is ", val);
+        }
+
+        function process() {
+            console.log("Before Heavy call ");
+            var m = heavy(print);
+            console.log("After Heavy call ", m);
+            console.log("Process the end");
+        }
+
+        function heavy(fn) // Call Back function 
+        {
+            setTimeout(() => {
+                console.log("Heavy Start");
+                for (let i = 1; i <= 100000; i++) {
+                    for (let j = 1; j <= 100000; j++) {
+
+                    }
+                }
+                console.log("Heavy End ");
+                document.querySelector("#heavy").innerText = "Heavy Done";
+                fn(1000); // print(1000)
+                //return 1000;
+            }, 7000);
+            // for (let i = 1; i <= 10; i++) {
+            //     console.log("i is ", i);
+            // }
+        }
+        var counter = 0;
+
+        function light() {
+            counter++;
+            document.querySelector("#light").innerText = counter;
+        }
+    </script>
+</head>
+
+<body>
+    <p>HEAVY <span id="heavy"></span></p>
+    <button onclick="process()">Heavy</button>
+    <br>
+    <button onclick="light()">Light</button>
+    <p>Light <span id="light"></span></p>
+</body>
+
+</html>
