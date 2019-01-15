@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function createImage(url) {
+            var img = document.createElement("img");
+            img.src = url;
+            return img;
+
+        }
+
+        function printImages(arr) {
+            var div = document.querySelector("#result");
+            div.innerHTML = "";
+            arr.forEach(obj => {
+                var url = obj.images.original.url;
+                div.appendChild(createImage(url));
+            })
+
+        }
+
+        function doAjax() {
+            var searchVal = document.querySelector("#search").value;
+            const url = `http://api.giphy.com/v1/gifs/search?q=${searchVal}&api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&limit=5`;
+            var promise = fetch(url);
+            promise.then(response => {
+                response.json().then(data => {
+                    printImages(data.data);
+                    console.log("Data is ", data);
+                }).catch(e => {
+                    console.log("Invalid JSON ", e);
+                })
+            }).catch(err => {
+                console.log("Server error ", err);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input id="search" type="text" placeholder="Type to Search any Image">
+    <br>
+    <button onclick="doAjax()">Search</button>
+    <div id="result"></div>
+</body>
+
+</html>

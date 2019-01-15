@@ -1,0 +1,108 @@
+async function cube(num){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	resolve(num**3)    
+},5000);
+});
+return pr;
+}
+undefined
+async function cube(num,time){
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	resolve(num**3)    
+},time);
+});
+return pr;
+}
+undefined
+async function cube(num,time){
+console.log("Inside Cube ",num, " ",time);
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	console.log("Cube Executed ",num," ",time);
+	resolve(num**3)    
+},time);
+});
+return pr;
+}
+undefined
+Promise.all(cube(2,2000),cube(3,3000),cube(5,5000)).then(arrOfResults=>console.log("Result is ",arrOfResults)).catch(err=>console.log("Error ",err));
+VM810:2 Inside Cube  2   2000
+VM810:2 Inside Cube  3   3000
+VM810:2 Inside Cube  5   5000
+VM1274:1 Error  TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at <anonymous>:1:9
+Promise {<resolved>: undefined}
+VM810:5 Cube Executed  2   2000
+VM810:5 Cube Executed  3   3000
+VM810:5 Cube Executed  5   5000
+Promise.all([cube(2,2000),cube(3,3000),cube(5,5000)]).then(arrOfResults=>console.log("Result is ",arrOfResults)).catch(err=>console.log("Error ",err));
+VM810:2 Inside Cube  2   2000
+VM810:2 Inside Cube  3   3000
+VM810:2 Inside Cube  5   5000
+Promise {<pending>}
+VM810:5 Cube Executed  2   2000
+VM810:5 Cube Executed  3   3000
+VM810:5 Cube Executed  5   5000
+VM1312:1 Result is  (3) [8, 27, 125]
+Promise.all([cube(2,2000),cube(3,3000),cube(5,5000)]).then(arrOfResults=>console.log("Result is ",arrOfResults)).catch(err=>console.log("Error ",err));
+VM810:2 Inside Cube  2   2000
+VM810:2 Inside Cube  3   3000
+VM810:2 Inside Cube  5   5000
+Promise {<pending>}
+VM810:5 Cube Executed  2   2000
+VM810:5 Cube Executed  3   3000
+VM810:5 Cube Executed  5   5000
+VM1344:1 Result is  (3) [8, 27, 125]
+async function cube(num,time){
+console.log("Inside Cube ",num, " ",time);
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	if(num==3){
+	reject("Error in 3 ");    
+}
+	console.log("Cube Executed ",num," ",time);
+	resolve(num**3)    
+},time);
+});
+return pr;
+}
+undefined
+Promise.all([cube(2,2000),cube(3,3000),cube(5,5000)]).then(arrOfResults=>console.log("Result is ",arrOfResults)).catch(err=>console.log("Error ",err));
+VM1555:2 Inside Cube  2   2000
+VM1555:2 Inside Cube  3   3000
+VM1555:2 Inside Cube  5   5000
+Promise {<pending>}
+VM1555:8 Cube Executed  2   2000
+VM1555:8 Cube Executed  3   3000
+VM1570:1 Error  Error in 3 
+VM1555:8 Cube Executed  5   5000
+async function total(){
+return await cube(2,2000) + await cube(3,3000) + await cube(5,5000);
+}
+undefined
+async function cube(num,time){
+console.log("Inside Cube ",num, " ",time);
+var pr = new Promise((resolve, reject)=>{
+	setTimeout(()=>{
+	/*if(num==3){
+	reject("Error in 3 ");
+}*/
+	console.log("Cube Executed ",num," ",time);
+	resolve(num**3)    
+},time);
+});
+return pr;
+}
+undefined
+total().then(data=>console.log("Data is ",data)).catch(e=>console.log("Error is ",e));
+VM2961:2 Inside Cube  2   2000
+Promise {<pending>}
+VM2961:8 Cube Executed  2   2000
+VM2961:2 Inside Cube  3   3000
+VM2961:8 Cube Executed  3   3000
+VM2961:2 Inside Cube  5   5000
+VM2961:8 Cube Executed  5   5000
+VM3135:1 Data is  160
