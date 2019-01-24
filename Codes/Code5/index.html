@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script src="js/firebaseconfig.js"></script>
+    <script src="js/user.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <h1 class='alert-info text-center'>User Form</h1>
+        <h2 id='result'></h2>
+        <div class='form-group'>
+            <label for="">Userid</label>
+            <input id='userid' class='form-control' type="text" placeholder='Type Userid Here'>
+        </div>
+        <div class='form-group'>
+            <label for="">Password</label>
+            <input id='pwd' class='form-control' type="password" placeholder='Type Userid Here'>
+        </div>
+        <div class='form-group'>
+            <button id="login" class='btn btn-primary mr-2'>Login</button>
+            <button id="register" class='btn btn-success'>Register</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
