@@ -1,0 +1,53 @@
+class Node{
+constructor(left,right,data){
+this.left = left;
+this.right = right;
+this.data = data;
+}
+
+}
+undefined
+var first = new Node(null, null, 10);
+undefined
+first;
+Node {left: null, right: null, data: 10}
+var second = new Node(null, null, 20);
+undefined
+first.left = second;
+Node {left: null, right: null, data: 20}
+first;
+Node {left: Node, right: null, data: 10}
+first.left.data;
+20
+function express(){
+console.log("I am Express ");
+return function(){
+console.log("I am App ");
+}
+}
+undefined
+const app = express();
+VM12173:2 I am Express 
+undefined
+typeof app;
+"function"
+app();
+VM12173:4 I am App 
+undefined
+var middlewares = [];
+app.use=(fn)=>{
+middlewares.push(fn);
+}
+(fn)=>{
+middlewares.push(fn);
+}
+function myMiddleware(req,res, next){
+console.log("I am A Middleware");
+}
+app.use(myMiddleware);
+undefined
+middlewares;
+[ƒ]0: ƒ myMiddleware(req,res, next)length: 1__proto__: Array(0)
+middlewares[0]();
+VM13605:2 I am A Middleware
+undefined
