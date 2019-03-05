@@ -1,0 +1,6 @@
+[36m[2019-03-01T13:03:57.284] [DEBUG] mylogs - [39mInside Product API Fetch
+[36m[2019-03-01T13:03:57.287] [DEBUG] mylogs - [39mCall Product Operation Find
+[36m[2019-03-01T13:05:01.809] [DEBUG] mylogs - [39mInside Product API Fetch
+[36m[2019-03-01T13:05:01.812] [DEBUG] mylogs - [39mCall Product Operation Find
+[91m[2019-03-01T13:05:02.130] [ERROR] mylogs - [39mSome Error During Find in ProductOperations
+[91m[2019-03-01T13:07:38.528] [ERROR] mylogs - [39mSome Error During Find in ProductOperations
