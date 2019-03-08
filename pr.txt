@@ -1,0 +1,48 @@
+Restful WebService , JWT Token
+
+Admin
+Users collection
+Admin Record
+admin admin PasswordChangeRequired (Y)
+
+Change Password 
+
+Shop App
+Admin (Seller) amit 
+1. Ads
+Banner
+New Arrival
+Discounted
+a). CRUD
+
+3. Logo
+CRUD
+
+
+2. Menu
+a) XLS Upload
+b) CRUD
+
+Winston
+
+
+Customer
+Search (Schema.find()) In Stock , Out of Stock, Remaining Less than 5
+AddtoCart With login store in localStorage and After login store in table. (Cart) Userid, ProductId, CartID (Generate) , Quantity
+Buy - Login (Login with Google), Payment Gateway
+Book Order Mail PDF Attach
+Order Table
+OrderId , Userid, ProductId , Quantity, DelDate, DelBy
+
+
+Delievered
+OrderId, DelBy , Date, Received
+
+Del Teams
+Zone Wise Team
+Register Del Boys
+After Del Update 
+
+
+
+
