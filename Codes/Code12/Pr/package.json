@@ -1,0 +1,28 @@
+{
+  "name": "meanfinalproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.5.0",
+    "log4js": "^4.0.2",
+    "mongoose": "^5.4.16",
+    "multer": "^1.4.1",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^5.1.1",
+    "winston": "^3.2.1",
+    "xls-to-json": "^0.5.1",
+    "xlsx-to-json": "^0.3.0"
+  }
+}

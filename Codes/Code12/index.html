@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-app>
+    <input ng-model="search.price" type="text" placeholder="Type Fruit to Search"> Sort By Asc / Desc
+
+    <select ng-model="sortby">
+        <option >name</option>
+        <option >price</option>
+       
+    </select>
+    <input type="checkbox" ng-model="tick"> {{tick}}
+    <ul ng-init="fruits=[{name:'Apple',price:90},{name:'Orange',price:80},{name:'Mango',price:100}]">
+        <li ng-repeat="fruit in fruits|filter:search|orderBy:sortby:tick">
+            {{fruit.name}} {{ fruit.price}}
+        </li>
+    </ul>
+
+    <input ng-model="first" type='text' placeholder='Type First Name'>
+    <p>First Name is {{first|uppercase}} Last Name is {{last|uppercase}}</p>
+    <input ng-model="last" type='text' placeholder='Type Last Name'>
+</body>
+
+</html>
