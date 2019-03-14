@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .size {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+
+</head>
+
+<body ng-app='admin'>
+    <div ng-controller="adminctrl">
+        <label for="">Enter the Id to Search</label><input placeholder="Type Product Id Here" ng-model="pid" type="text"> {{pid}}
+        <button ng-click="doSearch()">Search</button>
+        <h3>{{message}}</h3>
+
+        <br> {{err}}
+        <div ng-show="showIt">
+            <table border='1'>
+                <tr>
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.price}}</td>
+                    <td><img class='size' ng-src="{{data.url}}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

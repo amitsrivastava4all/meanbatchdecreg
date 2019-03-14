@@ -1,0 +1,24 @@
+{
+  "name": "mvcapp",
+  "authors": [
+    "amitsrivastava4all <amitsrivastava4all@gmail.com>"
+  ],
+  "description": "this is test project",
+  "main": "",
+  "keywords": [
+    "first",
+    "app"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.8"
+  }
+}
