@@ -1,0 +1,1 @@
+userModule.constant('REGISTER_URL','http://localhost:1234/register');
