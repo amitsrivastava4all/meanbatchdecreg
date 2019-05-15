@@ -1,0 +1,140 @@
+var arr = [10,20,30,40,50];
+undefined
+typeof arr;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+var arr = new Array(10,20,30);
+undefined
+arr;
+(3) [10, 20, 30]
+typeof arr;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+var ram = {};
+undefined
+typeof ram;
+"object"
+ram instanceof Object;
+true
+typeof Object;
+"function"
+var ram = {id:1001, name:'Ram'};
+undefined
+ram;
+{id: 1001, name: "Ram"}
+ram.salary = 9000;
+9000
+ram;
+{id: 1001, name: "Ram", salary: 9000}
+ram.address = 'Delhi';
+"Delhi"
+ram;
+{id: 1001, name: "Ram", salary: 9000, address: "Delhi"}
+delete ram.id;
+true
+ram;
+{name: "Ram", salary: 9000, address: "Delhi"}
+var shyam = {id:1002, name:'Shyam'};
+undefined
+function createEmployee(id, name,salary){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary = salary;
+return obj;
+}
+undefined
+var ram = createEmployee(1001, "Ram",9999);
+undefined
+var shyam = createEmployee(1002,"Shyam",8888);
+undefined
+ram;
+{id: 1001, name: "Ram", salary: 9999}
+shyam;
+{id: 1002, name: "Shyam", salary: 8888}
+function Employee(id, name, salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+undefined
+var ram = new Employee(1001,"Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: Object
+ram instanceof Employee;
+true
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+ram.city='Delhi'
+"Delhi"
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, city: "Delhi"}
+var shyam = new Employee(1001,"Ram",9999);
+undefined
+shyam;
+Employee {id: 1001, name: "Ram", salary: 9999}
+Employee
+ƒ Employee(id, name, salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+typeof Employee;
+"function"
+function Employee(id, name, salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+this.print=function(){
+console.log('Id is '+this.id + ' Name is '+this.name+' Salary is '+this.salary);
+}
+}
+undefined
+var ram = new Employee(1001,"Ram",8888);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 8888, print: ƒ}
+ram.print();
+VM1561:6 Id is 1001 Name is Ram Salary is 8888
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 8888, print: ƒ}
+shyam;
+Employee {id: 1001, name: "Ram", salary: 9999}
+var shyam= new Employee(1002,"Shyam",7777);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 7777, print: ƒ}
+Employee.prototype.show = function(){
+console.log('SHOW :::: Id is '+this.id + ' Name is '+this.name+' Salary is '+this.salary);
+}
+}
+VM1801:4 Uncaught SyntaxError: Unexpected token }
+Employee.prototype.show = function(){
+console.log('SHOW :::: Id is '+this.id + ' Name is '+this.name+' Salary is '+this.salary);
+}
+
+ƒ (){
+console.log('SHOW :::: Id is '+this.id + ' Name is '+this.name+' Salary is '+this.salary);
+}
+var ram = new Employee(1001,"Ram",8888);
+undefined
+var shyam= new Employee(1002,"Shyam",7777);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 8888, print: ƒ}id: 1001name: "Ram"print: ƒ ()salary: 8888__proto__: show: ƒ ()constructor: ƒ Employee(id, name, salary)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 7777, print: ƒ}
+ram.show();
+VM1810:2 SHOW :::: Id is 1001 Name is Ram Salary is 8888
+undefined
+shyam.show();
+VM1810:2 SHOW :::: Id is 1002 Name is Shyam Salary is 7777
+undefined
